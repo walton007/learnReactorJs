@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Nothing from './Nothing.jsx';
+
 export default class Note extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +22,9 @@ export default class Note extends React.Component {
     return (
       <div>
         {editing ? this.renderEdit() : this.renderTask()}
+        <Nothing/>
       </div>
+
     );
   }
   renderEdit() {
