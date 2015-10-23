@@ -25,6 +25,18 @@ var common = {
     extensions: ['', '.js', '.jsx']
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.css$/,
+        loaders: ['csslint'],
+        include: APP_PATH
+      },
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: APP_PATH
+      }
+    ],
     loaders: [
       {
         test: /\.css$/,
