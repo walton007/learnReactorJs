@@ -5,8 +5,11 @@ import LaneActions from '../actions/LaneActions';
 import LaneStore from '../stores/LaneStore';
 // import connect from '../decorators/connect';
 
+import {DragDropContext} from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
+
 // @connect(NoteStore)
-export default class App extends React.Component {
+class App extends React.Component {
   render() {
     return (
       <div>
@@ -27,3 +30,5 @@ export default class App extends React.Component {
     LaneActions.create({name: 'New lane'});
   }
 }
+
+export default DragDropContext(HTML5Backend)(App);
